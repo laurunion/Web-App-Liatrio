@@ -8,7 +8,7 @@ COPY . .
 
 RUN go build -o app .
 
-FROM alpine:3.20
+FROM alpine:3.23
 WORKDIR /app
 COPY --from=builder /Web-App/app ./app
 
