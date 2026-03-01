@@ -23,11 +23,12 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-app:${{ github.sha }} .
 
+      - name: Run container
+        run: |
+          docker run -d -p 80:3000 --name app ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-app:${{ github.sha }}
+
       - name: Run Liatrio apprentice-action
         uses: liatrio/github-actions/apprentice-action@master
-        with:
-          image: ${{ secrets.DOCKERHUB_USERNAME }}/liatrio-app:${{ github.sha }}
-          port: 3000
 
       - name: Push Docker image
         run: |
