@@ -13,7 +13,7 @@ type Response struct{
 func main() {
     app := fiber.New()
 
-    app.Get("/", func(c fiber.Ctx) error {
+    app.Get("/", func(c *fiber.Ctx) error {
         response := Response{
             Message: "My name is Lauren",
             Timestamp: time.Now().UnixMilli(),
