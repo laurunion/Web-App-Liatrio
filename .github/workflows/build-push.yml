@@ -33,7 +33,7 @@ jobs:
 
       - name: Test minified json
         run: |
-          curl -s http://localhost:3000 | wc -l | grep 1
+          curl -s http://localhost | wc -l | grep 1
 
       - name: Push Docker image
         run: |
