@@ -8,10 +8,7 @@ import (
 type Response struct{
     Message    string  `json:"message"`
     Timestamp  int64   `json:"timestamp"` 
-    Commit    string `json:"commit"` 
 }
-
-var CommitSHA string = "dev"
 
 func main() {
     app := fiber.New()
@@ -20,7 +17,6 @@ func main() {
         response := Response{
             Message: "My name is Lauren",
             Timestamp: time.Now().UnixMilli(),
-            Commit: CommitSHA,
         }
         return c.JSON(response)
     })

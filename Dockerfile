@@ -6,8 +6,7 @@ RUN go mod download
 
 COPY . .
 
-ARG COMMIT_SHA
-RUN go build -ldflags="-X main.Commit=$COMMIT_SHA" -o app .
+RUN go build -o app .
 
 FROM alpine:3.23
 WORKDIR /app
