@@ -8,7 +8,6 @@ import (
 type Response struct{
     Message    string  `json:"message"`
     Timestamp  int64   `json:"timestamp"` 
-    Fact       string  `json:"fact"`
     Commit    string `json:"commit"` 
 }
 
@@ -21,8 +20,7 @@ func main() {
         response := Response{
             Message: "My name is Lauren",
             Timestamp: time.Now().UnixMilli(),
-            Fact: "I love automation",
-            Commit:   CommitSHA,
+            Commit: CommitSHA,
         }
         return c.JSON(response)
     })
