@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - test
 
 env:
   ECR_REPOSITORY: liatrio-app
